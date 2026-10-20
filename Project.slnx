@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/Archsim/" />
+  <Folder Name="/Archsim/Modules/">
+    <Project Path="Archsim/Modules/Project/Project.csproj" />
+    <Project Path="Archsim/Modules/SimulationEngine/SimulationEngine.csproj" />
+  </Folder>
+  <Folder Name="/Archsim/Modules/Project/" />
+</Solution>
