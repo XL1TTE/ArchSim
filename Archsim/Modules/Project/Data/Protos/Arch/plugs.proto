@@ -1,0 +1,21 @@
+syntax = "proto3";
+package archsim.arch;
+
+option csharp_namespace = "Archsim.Data.Arch";
+
+// Reusable outbound transmission adapter
+message OutboundPlug {
+  oneof routing {
+    SingleTargetPlug single = 1;
+    FanOutPlug fan_out = 2;
+  }
+}
+
+message SingleTargetPlug {
+  string target_edge_id = 1;
+  string emission_tag = 2;
+}
+
+message FanOutPlug {
+  repeated SingleTargetPlug targets = 1;
+}

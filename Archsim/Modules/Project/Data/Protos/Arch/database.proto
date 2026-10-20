@@ -1,0 +1,38 @@
+syntax = "proto3";
+package archsim.arch;
+
+import "Arch/plugs.proto";
+
+option csharp_namespace = "Archsim.Data.Arch";
+
+message DatabaseNode {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+
+  repeated DatabaseOperation operations = 4;
+
+  oneof streaming_capability {
+    NoStreaming no_streaming = 5;
+    Streaming streaming = 6;
+  }
+}
+
+message DatabaseOperation {
+  string tag = 1;
+
+  oneof access_mode {
+    ReadAccess read = 2;
+    WriteAccess write = 3;
+  }
+}
+
+message ReadAccess {}
+
+message WriteAccess {}
+
+message NoStreaming {}
+
+message Streaming {
+  OutboundPlug plug = 1;
+}
