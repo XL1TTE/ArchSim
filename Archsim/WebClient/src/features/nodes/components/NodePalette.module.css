@@ -1,0 +1,59 @@
+.palette {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 240px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.header {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #1e293b;
+}
+
+.statusMessage {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.error {
+  color: #ef4444;
+}
+
+.nodeList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nodeItem {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  cursor: grab;
+  user-select: none;
+}
+
+.nodeName {
+  font-size: 13px;
+  font-weight: 500;
+  color: #0f172a;
+}
+
+.nodeDescription {
+  font-size: 11px;
+  color: #64748b;
+}

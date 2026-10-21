@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package api.v1;
+
+option csharp_namespace = "ArchSim.Server.Proto.Api.v1";
+
+message NodePosition {
+  double x = 1;
+  double y = 2;
+}
+
+message NodePreview {
+  string type_id = 1;
+  string name = 2;
+  string description = 3;
+}
+
+message NodeInstance {
+  string id = 1;
+  string type_id = 2;
+  string name = 3;
+  string description = 4;
+  NodePosition position = 5;
+}

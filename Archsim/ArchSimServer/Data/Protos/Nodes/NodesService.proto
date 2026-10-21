@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package api.v1;
+
+import "Nodes/NodeTypes.proto";
+
+option csharp_namespace = "ArchSim.Server.Proto.Api.v1";
+
+service Nodes {
+  rpc GetPreviews (GetPreviewsRequest) returns (GetPreviewsResponse);
+  rpc FromArch (FromArchRequest) returns (FromArchResponse);
+  rpc Create (CreateNodeRequest) returns (CreateNodeResponse);
+}
+
+message GetPreviewsRequest {}
+
+message GetPreviewsResponse {
+  repeated NodePreview previews = 1;
+}
+
+message FromArchRequest {
+  string arch_file_path = 1;
+}
+
+message FromArchResponse {
+  repeated NodeInstance nodes = 1;
+}
+
+message CreateNodeRequest {
+  string arch_file_path = 1;
+  string type_id = 2;
+  string name = 3;
+  optional NodePosition position = 4;
+}
+
+message CreateNodeResponse {
+  NodeInstance node = 1;
+}

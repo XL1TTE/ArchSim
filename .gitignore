@@ -68,7 +68,7 @@ nunit-*.xml
 *.sln.ide/
 
 # Visual Studio Code
-.vscode/*
+.vscode/
 
 # JetBrains Rider
 .idea/
@@ -84,3 +84,5 @@ ehthumbs.db
 
 docs/*
 adrs/*
+
+.claude/

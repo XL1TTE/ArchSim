@@ -13,6 +13,6 @@
 
   <ItemGroup>
     <Protobuf Include="Data/Protos/**/*.proto" ProtoRoot="Data/Protos" Access="Public" />
-  </ItemGroup >
+  </ItemGroup>  
 
 </Project>
