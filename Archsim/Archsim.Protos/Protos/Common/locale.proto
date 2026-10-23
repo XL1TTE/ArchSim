@@ -1,0 +1,9 @@
+syntax = "proto3";
+package archsim.core;
+
+option csharp_namespace = "Archsim.Proto.Core";
+
+message LocaleString {
+  string key      = 1;
+  string fallback = 2;
+}

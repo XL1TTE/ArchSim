@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Protobuf Include="Data/Protos/**/*.proto" ProtoRoot="Data/Protos" Access="Public" />
+    <ProjectReference Include="..\Archsim.Protos\Archsim.Protos.csproj" />
   </ItemGroup>
 
 </Project>

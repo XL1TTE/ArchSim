@@ -1,0 +1,34 @@
+syntax = "proto3";
+package archsim.core;
+
+import "Graph/slots.proto";
+
+option csharp_namespace = "Archsim.Proto.Core";
+
+message ServiceNode {
+  CustomPlug egress = 1;
+  repeated ServiceOperation operations = 2;
+}
+
+message ServiceOperation {
+  string trigger_tag = 1;
+  ExecutionPipeline pipeline = 2;
+}
+
+message ExecutionPipeline {
+  repeated PipelineStage stages = 1;
+}
+
+message PipelineStage {
+  string slot_id = 1;
+  string operation_tag = 2;
+
+  oneof interaction {
+    RequestResponse request_response = 3;
+    OneWay one_way = 4;
+  }
+}
+
+message RequestResponse {}
+
+message OneWay {}

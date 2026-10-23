@@ -1,20 +1,16 @@
 syntax = "proto3";
-package archsim.arch;
+package archsim.core;
 
-import "Arch/plugs.proto";
+import "Graph/slots.proto";
 
-option csharp_namespace = "Archsim.Data.Arch";
+option csharp_namespace = "Archsim.Proto.Core";
 
 message DatabaseNode {
-  string id = 1;
-  string name = 2;
-  string description = 3;
-
-  repeated DatabaseOperation operations = 4;
+  repeated DatabaseOperation operations = 1;
 
   oneof streaming_capability {
-    NoStreaming no_streaming = 5;
-    Streaming streaming = 6;
+    NoStreaming no_streaming = 2;
+    Streaming streaming = 3;
   }
 }
 
@@ -34,5 +30,5 @@ message WriteAccess {}
 message NoStreaming {}
 
 message Streaming {
-  OutboundPlug plug = 1;
+  OutboundSlot slot = 1;
 }

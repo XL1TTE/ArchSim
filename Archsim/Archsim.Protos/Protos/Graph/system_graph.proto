@@ -1,0 +1,15 @@
+syntax = "proto3";
+package archsim.core;
+
+import "Common/layout.proto";
+import "Graph/node.proto";
+import "Graph/connection.proto";
+
+option csharp_namespace = "Archsim.Proto.Core";
+
+message SystemGraph {
+  int32 version = 1;
+  repeated NodeInstance nodes = 2;
+  repeated Connection connections = 3;
+  map<string, CanvasPosition> layout = 4;
+}

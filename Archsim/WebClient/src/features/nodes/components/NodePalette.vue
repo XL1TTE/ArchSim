@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useNodePreviews } from '../api/useNodePreviews'
-import type { NodePreview } from '../../../contracts/rpc/Nodes/NodeTypes_pb'
+import type { NodePreview } from '../../../contracts/rpc/Api/Nodes/NodeTypes_pb'
 import styles from './NodePalette.module.css'
 
 const { data: previews, isLoading, isError, error } = useNodePreviews()

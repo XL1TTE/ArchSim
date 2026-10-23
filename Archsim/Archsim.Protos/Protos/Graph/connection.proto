@@ -1,0 +1,16 @@
+syntax = "proto3";
+package archsim.core;
+
+option csharp_namespace = "Archsim.Proto.Core";
+
+message Connection {
+  message Endpoint {
+    string node_id = 1;
+    string slot_id = 2;
+  }
+
+  string id = 1;
+  Endpoint source = 2;
+  Endpoint target = 3;
+  optional string label = 4;
+}

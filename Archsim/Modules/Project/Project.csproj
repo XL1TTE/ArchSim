@@ -7,12 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Google.Protobuf" Version="3.36.2" />
-    <PackageReference Include="Grpc.Tools" Version="2.84.0" />
+    <ProjectReference Include="..\..\Archsim.Protos\Archsim.Protos.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Protobuf Include="Data/Protos/**/*.proto" ProtoRoot="Data/Protos" Access="Public" />
-  </ItemGroup>  
 
 </Project>

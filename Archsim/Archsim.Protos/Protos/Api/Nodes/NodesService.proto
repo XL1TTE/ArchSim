@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package api.v1;
 
-import "Nodes/NodeTypes.proto";
+import "Api/Nodes/NodeTypes.proto";
 
 option csharp_namespace = "ArchSim.Server.Proto.Api.v1";
 

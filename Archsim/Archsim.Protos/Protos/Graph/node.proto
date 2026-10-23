@@ -1,0 +1,29 @@
+syntax = "proto3";
+package archsim.core;
+
+import "Common/locale.proto";
+import "Graph/Nodes/service.proto";
+import "Graph/Nodes/database.proto";
+
+option csharp_namespace = "Archsim.Proto.Core";
+
+message NodeInstance {
+  message Metadata {
+    string id = 1;
+
+    LocaleString default_name = 2;
+    optional string custom_name = 3;
+
+    LocaleString default_description = 4;
+    optional string custom_description = 5;
+
+    LocaleString tooltip = 6;
+  }
+
+  Metadata metadata = 1;
+
+  oneof kind {
+    ServiceNode service = 2;
+    DatabaseNode database = 3;
+  }
+}

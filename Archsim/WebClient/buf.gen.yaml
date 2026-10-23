@@ -6,4 +6,6 @@ plugins:
     opt:
       - target=ts
 inputs:
-  - directory: ../ArchSimServer/Data/Protos
+  - directory: ../Archsim.Protos/Protos
+    paths:
+      - ../Archsim.Protos/Protos/Api

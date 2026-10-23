@@ -1,0 +1,32 @@
+syntax = "proto3";
+package archsim.core;
+
+import "Common/locale.proto";
+
+option csharp_namespace = "Archsim.Proto.Core";
+
+message OutboundSlot {
+  message Metadata {
+    string id = 1;
+    LocaleString default_label = 2;
+    optional string custom_label = 3;
+    LocaleString tooltip = 4;
+  }
+
+  Metadata metadata = 1;
+
+  oneof slot_type {
+    DatabaseClientSlot database = 2;
+    HttpClientSlot http = 3;
+    MessageProducerSlot message_producer = 4;
+  }
+}
+
+message DatabaseClientSlot {}
+message HttpClientSlot {}
+message MessageProducerSlot {}
+
+message CustomPlug {
+  string id = 1;
+  repeated OutboundSlot slots = 2;
+}
